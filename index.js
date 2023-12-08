@@ -55,6 +55,7 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 
 	try {
+		console.log(`[Info] ${interaction.user.globalName} - ${interaction.user.id} attempted to execute command ${interaction.commandName}`);
 		await command.execute(interaction);
 	}
 	catch (error) {
