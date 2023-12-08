@@ -10,7 +10,10 @@ module.exports = {
 				.setDescription('The text to say.')
 				.setRequired(true)),
 	async execute(_client, interaction) {
-		if (interaction.user.id != ownerId) {await interaction.reply({ content: 'This is a bot owner only command!, sorry.', ephemeral: true });}
+		if (interaction.user.id != ownerId) {
+			await interaction.reply({ content: 'This is a bot owner only command!, sorry.', ephemeral: true });
+			return;
+		}
 		const input = interaction.options.getString('input') ?? 'No input provided';
 		const channel = interaction.channel;
 		channel.send(input);
