@@ -5,6 +5,6 @@ module.exports = {
 		.setName('heartbeat')
 		.setDescription('Websocket Ping. (Technical stuff)'),
 	async execute(client, interaction) {
-		interaction.reply(`Websocket heartbeat: ${client.ws.ping}ms.`);
+		interaction.reply({ content: `Websocket heartbeat: ${client.ws.ping}ms.`, ephemeral: true });
 	},
 };
